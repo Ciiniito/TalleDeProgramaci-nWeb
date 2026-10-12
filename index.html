@@ -329,5 +329,18 @@
         </div>
     </footer>
 
+    <script>
+        const navigationSound = new Audio("assets/sonido/sonidodepizza.mp3");
+
+        document.querySelectorAll(".nav a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navigationSound.currentTime = 0;
+                navigationSound.play().catch((error) => {
+                    console.error("No se pudo reproducir el sonido de navegación:", error);
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

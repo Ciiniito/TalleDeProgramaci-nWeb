@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="City Pizza San Vicente - Pizzas, delivery y comida para llevar en San Vicente de Cañete.">
+    <meta name="description"
+        content="City Pizza San Vicente - Pizzas, delivery y comida para llevar en San Vicente de Cañete.">
     <meta name="keywords" content="City Pizza, pizza, San Vicente, Cañete, delivery, pizzería">
     <meta name="author" content="City Pizza San Vicente">
     <title>City Pizza | San Vicente de Cañete</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/brand/logo.jpeg" type="image/jpeg">
+
+    <!-- <llink rel="icon" type="image/x-icon" href="favicon.ico"> -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+
+
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="container nav-container">
-            <a href="#inicio" class="logo">
-                <img src="assets/brand/logo.jpeg" alt="City Pizza" class="logo-image">
-            </a>
+    <div class="encabezado-fijo">
 
-            <nav class="nav">
-                <a href="#inicio">Inicio</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#menu">Menú</a>
-                <a href="#horarios">Horarios</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
+        <!-- BARRA SUPERIOR DE CONTACTO -->
+
+        <div class="top-bar">
+            <div class="container top-bar-content">
+
+                <span>📍 San Vicente de Cañete</span>
+
+                <a href="#contacto">
+                    ☎ Contáctanos
+                </a>
+
+            </div>
+
         </div>
-    </header>
+
+        <header class="header">
+            <div class="container nav-container">
+                <a href="#inicio" class="logo">
+                    <img src="assets/brand/logo.jpeg" alt="City Pizza" class="logo-image">
+                </a>
+
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#menu">Menú</a>
+                    <a href="#horarios">Horarios</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </div>
+        </header>
+
+    </div>
 
     <main>
 
@@ -165,6 +191,42 @@
             </div>
         </section>
 
+        <!-- GALERÍA DE PIZZAS -->
+
+        <section id="galeria" class="section">
+            <div class="container">
+
+                <div class="section-title">
+                    <span>NUESTRA GALERÍA</span>
+                    <h2>Conoce nuestras pizzas</h2>
+                    <p>Descubre algunas de nuestras deliciosas pizzas.
+                    </p>
+
+                </div>
+
+                <div class="galeria">
+                    <figure class="galeria-item">
+                        <img src="assets/img/pizza-pepperoni.jpg" alt="Pizza de pepperoni">
+                        <figcaption>Pizza de pepperoni</figcaption>
+                    </figure>
+
+                    <figure class="galeria-item">
+                        <img src="assets/img/pizza-hawaiana.jpg" alt="Pizza hawaiana">
+                        <figcaption>Pizza hawaiana</figcaption>
+                    </figure>
+                    </figure>
+
+                    <figure class="galeria-item">
+                        <img src="assets/img/pizza-queso.jpg" alt="Pizza de queso">
+                        <figcaption>Pizza de queso</figcaption>
+                    </figure>
+
+                </div>
+
+        </section>
+
+
+
         <section id="horarios" class="section schedule-section">
             <div class="container">
                 <div class="section-title">
@@ -233,6 +295,38 @@
             </div>
         </section>
 
+
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <span>CONOCE NUESTRA PASIÓN</span>
+                    <H2>El arte de preparar una pizza</H2>
+                    <p>Descubre cómo se prepara una deliciosa pizza.</p>
+
+                </div>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ywrLSeDVH5U?si=RPkD7bS5PvXIw20W"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <!-- VIDEO MP4 LOCAL -->
+        <section id="video-local">
+            <h2>¡Así se prepara nuestra pizza!</h2>
+
+            <video controls width="560">
+                <source src="assets/videos/pizza-A.mp4" type="video/mp4">
+                Tu navegador no admite videos HTML5.
+            </video>
+        </section>
+
         <section id="contacto" class="section contact-section">
             <div class="container contact-container">
 
@@ -281,13 +375,23 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="telefono">teléfono</label>
+
+                        <input type="tel" id="telefono" name="telefono" placeholder="ejemplo: 987654321"
+                            pattern="[0-9]{9}" title="Ingresa un número de 9 dígitos" required>
+
+                    </div>
+
+
+                    <div class="form-group">
                         <label for="asunto">Asunto</label>
                         <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje" required>
                     </div>
 
                     <div class="form-group">
                         <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje" required></textarea>
+                        <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje"
+                            required></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary form-button">Enviar mensaje</button>
@@ -343,4 +447,5 @@
     </script>
 
 </body>
+
 </html>

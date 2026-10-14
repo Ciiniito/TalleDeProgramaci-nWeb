@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Pacifico&display=swap');
 
+:root {
+
+    --color-primary: #06182f;
+    --color-secondary: #102f5a;
+    --color-acento: #ffcf33;
+    --color-rojo: #b9121b;
+    --color-fondo: #f5f8fc;
+    --color-blanco: #ffffff;
+}
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -36,8 +49,8 @@ a {
 
 .header,
 .footer {
-    color: white;
-    background-color: #06182f;
+    color: var(--color-blanco);
+    background-color: var(--color-primary);
 }
 
 .footer-description {
@@ -45,12 +58,6 @@ a {
     margin-top: 10px;
     color: #a9c0db;
     font-size: 14px;
-}
-
-.header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
 }
 
 .nav-container {
@@ -110,7 +117,7 @@ a {
 
 .hero-tag,
 .section-title span,
-.contact-info > span {
+.contact-info>span {
     display: block;
     margin-bottom: 12px;
     color: #ffcf33;
@@ -196,7 +203,7 @@ a {
 }
 
 .section-title p,
-.contact-info > p,
+.contact-info>p,
 .feature-card p,
 .contact-item p {
     color: #66758d;
@@ -345,7 +352,7 @@ a {
     margin-bottom: 20px;
 }
 
-.contact-info > p {
+.contact-info>p {
     margin-bottom: 30px;
 }
 
@@ -355,7 +362,7 @@ a {
     margin-bottom: 20px;
 }
 
-.contact-item > div:first-child {
+.contact-item>div:first-child {
     width: 42px;
     height: 42px;
     display: grid;
@@ -424,7 +431,7 @@ a {
     text-align: justify;
 }
 
-.footer-brand{
+.footer-brand {
     display: flex;
     flex-direction: row;
 }
@@ -450,6 +457,7 @@ a {
 }
 
 @media (max-width: 900px) {
+
     .hero-content,
     .contact-container {
         grid-template-columns: 1fr;
@@ -505,4 +513,85 @@ a {
     .footer-container {
         grid-template-columns: 1fr;
     }
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.galeria-item {
+    width: 300px;
+    max-width: 200%;
+    text-align: center;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 220;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.galeria-item figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.top-bar {
+    background-color: var(--color-rojo);
+    color: white;
+    padding: 10px 0;
+
+
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.encabezado-fijo {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* CENTRAR EL VIDEO DE YOUTUBE */
+
+.video-container {
+
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+}
+
+/* SECCIÓN DEL VIDEO MP4 LOCAL */
+
+#video-local {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#video-local h2 {
+    margin-bottom: 25px;
+}
+
+#video-local video {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
 }

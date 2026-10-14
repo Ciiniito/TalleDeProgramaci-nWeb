@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Pacifico&display=swap');
 
-:root{
+:root {
 
     --color-primary: #06182f;
-   --color-secondary: #102f5a;
+    --color-secondary: #102f5a;
     --color-acento: #ffcf33;
     --color-rojo: #b9121b;
     --color-fondo: #f5f8fc;
-    --color-blanco:#ffffff;
+    --color-blanco: #ffffff;
 }
 
 
@@ -60,27 +60,16 @@ a {
     font-size: 14px;
 }
 
-/* BARRA DE NAVEGACIÓN: enlaces centrados en la columna central y logo a la derecha */
-
 .nav-container {
     min-height: 76px;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.header .logo {
-    grid-column: 3;
-    grid-row: 1;
-    justify-self: end;
-    padding: 4px;
 }
 
 .logo-image {
@@ -91,50 +80,18 @@ a {
 }
 
 .nav {
-    grid-column: 2;
-    grid-row: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
+    gap: 25px;
 }
 
 .nav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 0 14px;
-    border-radius: 6px;
     font-size: 14px;
     font-weight: 600;
-    line-height: 1;
-    white-space: nowrap;
 }
 
 .nav a:hover,
 .footer a:hover {
     color: #ffcf33;
-}
-
-.nav a:focus-visible,
-.logo:focus-visible,
-.nav-toggle:focus-visible {
-    outline: 2px solid var(--color-acento);
-    outline-offset: 2px;
-}
-
-.nav-toggle {
-    display: none;
-    width: 44px;
-    height: 44px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, .3);
-    border-radius: 6px;
-    color: var(--color-blanco);
-    background-color: transparent;
-    font-size: 24px;
 }
 
 .hero {
@@ -160,7 +117,7 @@ a {
 
 .hero-tag,
 .section-title span,
-.contact-info > span {
+.contact-info>span {
     display: block;
     margin-bottom: 12px;
     color: #ffcf33;
@@ -246,7 +203,7 @@ a {
 }
 
 .section-title p,
-.contact-info > p,
+.contact-info>p,
 .feature-card p,
 .contact-item p {
     color: #66758d;
@@ -395,7 +352,7 @@ a {
     margin-bottom: 20px;
 }
 
-.contact-info > p {
+.contact-info>p {
     margin-bottom: 30px;
 }
 
@@ -405,7 +362,7 @@ a {
     margin-bottom: 20px;
 }
 
-.contact-item > div:first-child {
+.contact-item>div:first-child {
     width: 42px;
     height: 42px;
     display: grid;
@@ -435,129 +392,19 @@ a {
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    color: #17233a;
-    font-family: inherit;
-    font-size: 16px;
-}
-
-/* En el mensaje, el borde lo dibuja su contenedor para alojar el contador sin tapar el texto */
-.form-group input,
-.textarea-wrapper {
     border: 1px solid #cbd8e8;
     border-radius: 6px;
-    background-color: var(--color-blanco);
-    transition: border-color .2s, box-shadow .2s;
+    font-family: inherit;
+    font-size: 14px;
 }
 
 .form-group textarea {
-    display: block;
-    border: 0;
-    border-radius: 6px;
-    background-color: transparent;
     resize: vertical;
-}
-
-.word-counter {
-    display: block;
-    padding: 0 12px 8px;
-    color: #66758d;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: right;
-}
-
-.word-counter--limit {
-    color: var(--color-rojo);
-}
-
-/* Ejemplos orientativos en gris suave (opacity: 1 evita que Firefox los aclare de más) */
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #7a8799;
-    opacity: 1;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-}
-
-.form-group input:focus,
-.textarea-wrapper:focus-within {
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 0 3px rgba(16, 47, 90, .2);
-}
-
-.form-group input.is-invalid,
-.textarea-wrapper:has(.is-invalid) {
-    border-color: var(--color-rojo);
-    background-color: #fff6f6;
-}
-
-.form-group input.is-invalid:focus,
-.textarea-wrapper:has(.is-invalid):focus-within {
-    border-color: var(--color-rojo);
-    box-shadow: 0 0 0 3px rgba(185, 18, 27, .2);
-}
-
-.form-group input.is-valid,
-.textarea-wrapper:has(.is-valid) {
-    border-color: #1e8a4c;
-}
-
-.form-group input.is-valid:focus,
-.textarea-wrapper:has(.is-valid):focus-within {
-    box-shadow: 0 0 0 3px rgba(30, 138, 76, .2);
-}
-
-.form-note {
-    margin-bottom: 18px;
-    color: #66758d;
-    font-size: 13px;
-}
-
-.form-error {
-    margin-top: 6px;
-    color: var(--color-rojo);
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.form-error:empty {
-    display: none;
 }
 
 .form-button {
     width: 100%;
-    min-height: 48px;
     cursor: pointer;
-}
-
-.form-button:disabled {
-    opacity: .7;
-}
-
-.form-status {
-    margin-top: 16px;
-    padding: 12px 14px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.form-status--success {
-    color: #14532d;
-    background-color: #e3f6ea;
-}
-
-.form-status--error {
-    color: #8a0e15;
-    background-color: #fde8e9;
-}
-
-.form-status--info {
-    color: var(--color-secondary);
-    background-color: #e5effd;
 }
 
 .footer {
@@ -584,7 +431,7 @@ a {
     text-align: justify;
 }
 
-.footer-brand{
+.footer-brand {
     display: flex;
     flex-direction: row;
 }
@@ -610,6 +457,7 @@ a {
 }
 
 @media (max-width: 900px) {
+
     .hero-content,
     .contact-container {
         grid-template-columns: 1fr;
@@ -629,51 +477,19 @@ a {
     }
 }
 
-/* MENÚ DESPLEGABLE EN TABLETS PEQUEÑAS Y CELULARES */
-@media (max-width: 768px) {
+@media (max-width: 650px) {
     .nav-container {
-        min-height: 64px;
-        grid-template-columns: auto 1fr auto;
-        gap: 0 12px;
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 0;
     }
 
     .nav {
-        grid-column: 1 / -1;
-        grid-row: 2;
         flex-wrap: wrap;
-        padding-bottom: 12px;
+        justify-content: center;
+        gap: 12px;
     }
 
-    .js .nav-toggle {
-        display: inline-flex;
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .js .nav {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 4px;
-        border-top: 1px solid rgba(255, 255, 255, .15);
-        padding-top: 8px;
-    }
-
-    .js .nav.is-open {
-        display: flex;
-    }
-
-    .js .nav a {
-        min-height: 48px;
-        font-size: 16px;
-    }
-
-    .js .nav a:hover {
-        background-color: rgba(255, 255, 255, .08);
-    }
-}
-
-@media (max-width: 650px) {
     .hero-content {
         padding: 50px 0;
     }
@@ -704,7 +520,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-  
+
 }
 
 .galeria-item {
@@ -715,7 +531,7 @@ a {
 
 .galeria-item img {
     width: 100%;
-    height: 220px;
+    height: 220;
     object-fit: cover;
     border-radius: 12px;
 }
@@ -727,15 +543,15 @@ a {
     color: var(--color-primary);
 }
 
-.top-bar{
+.top-bar {
     background-color: var(--color-rojo);
     color: white;
     padding: 10px 0;
 
-   
+
 }
 
-.top-bar-content{
+.top-bar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -744,40 +560,20 @@ a {
     padding: 0 20px;
 }
 
-.encabezado-fijo{
+.encabezado-fijo {
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-/* Evita que la cabecera fija tape el inicio de cada sección al navegar */
-section[id] {
-    scroll-margin-top: 122px;
-}
-
-@media (max-width: 768px) {
-    section[id] {
-        scroll-margin-top: 150px;
-    }
-}
-
-/* VIDEO DE YOUTUBE: centrado, ancho fluido y proporción 16:9 */
+/* CENTRAR EL VIDEO DE YOUTUBE */
 
 .video-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 12px;
-    background-color: var(--color-primary);
-}
 
-.video-container iframe {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
 }
 
 /* SECCIÓN DEL VIDEO MP4 LOCAL */
@@ -798,75 +594,4 @@ section[id] {
     height: auto;
     margin: 0 auto;
     border-radius: 12px;
-}
-/* BOTÓN FLOTANTE DE WHATSAPP */
-
-.whatsapp-float {
-    position: fixed;
-    right: max(20px, env(safe-area-inset-right));
-    bottom: max(20px, env(safe-area-inset-bottom));
-    z-index: 90;
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: var(--color-blanco);
-    background-color: #25d366;
-    box-shadow: 0 4px 14px rgba(6, 24, 47, .35);
-    font-size: 30px;
-    transition: transform .2s, opacity .2s, visibility .2s;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.06);
-}
-
-.whatsapp-float:focus-visible {
-    outline: 3px solid var(--color-acento);
-    outline-offset: 3px;
-}
-
-.whatsapp-float.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(12px);
-}
-
-.whatsapp-tooltip {
-    position: absolute;
-    top: 50%;
-    right: calc(100% + 12px);
-    padding: 8px 12px;
-    border-radius: 6px;
-    color: var(--color-blanco);
-    background-color: var(--color-primary);
-    font-size: 13px;
-    font-weight: 700;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(-50%);
-    transition: opacity .2s, visibility .2s;
-}
-
-.whatsapp-float:focus-visible .whatsapp-tooltip {
-    opacity: 1;
-    visibility: visible;
-}
-
-@media (hover: hover) {
-    .whatsapp-float:hover .whatsapp-tooltip {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-/* Deja espacio al final de la página para que el botón no tape el texto del pie */
-@media (max-width: 768px) {
-    .footer-bottom {
-        padding-bottom: 90px;
-    }
 }
